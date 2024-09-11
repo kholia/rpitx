@@ -10,6 +10,8 @@ _Created by Evariste Courjaud F5OEO. See Licence for using it.
 
 # Installation
 
+NB: Use 32-bit Raspberry Pi OS only!
+
 Assuming a Raspbian Lite installation (raspios-bookworm) : [https://www.raspberrypi.org/downloads/raspbian/](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit)
 
 Be sure to have git package installed :
@@ -17,14 +19,15 @@ Be sure to have git package installed :
 sudo apt-get update
 sudo apt-get install git
 ```
-You can now clone the repository. A script (install.sh) is there for easy installation. You could inspect it and make steps manualy in case of any doubt. You can note that /boot/config.txt should be prompt to be modified during the installation. If it is not accepted, **rpitx** will be unstable.  
+You can now clone the repository. A script (install.sh) is there for easy installation. You could inspect it and make steps manualy in case of any doubt. You can note that /boot/config.txt should be prompt to be modified during the installation. If it is not accepted, **rpitx** will be unstable.
 
 ```sh
-git clone https://github.com/F5OEO/rpitx
+git clone https://github.com/kholia/rpitx
 cd rpitx
 ./install.sh
 ```
-Make a reboot in order to use **rpitx** in a stable state.
+
+Perform a reboot in order to use **rpitx** in a stable state.
 That's it !
 ```sh
 sudo reboot
@@ -37,6 +40,7 @@ sudo reboot
 | ---------------------|:-------:|
 | Pizero|OK|
 | PizeroW|OK|
+| Pi Zero 2W|OK|
 | PiA+|OK|
 | PiB|Partial|
 | PiB+|OK|
@@ -60,11 +64,11 @@ Choose your choice with arrows and enter to start it.**Don't forget, some test a
 
 Easy way to monitor what you are doing is by using a SDR software and a SDR receiver like a rtl-sdr one and set the frequency to 434MHZ.
 
-### Carrier ### 
+### Carrier ###
 ![Carrier](/doc/Tunerpitx.png)
-A simple carrier generated at 434MHZ. 
+A simple carrier generated at 434MHZ.
 
-### Chirp ### 
+### Chirp ###
 ![Chirp](/doc/chirprpitx.png)
 A carrier which move around 434MHZ.
 
@@ -104,7 +108,7 @@ This a beacon mode which sound like Morse. You need opera in mode 0.5 to decode.
 ## Rpitx and low cost RTL-SDR dongle ##
 ![rtlmenu](/doc/rlsdrmenu.png)
 
-**rtlmenu** allows to use rtl-sdr receiver dongle and **rpitx** together. This combine receiver and transmission for experimenting. 
+**rtlmenu** allows to use rtl-sdr receiver dongle and **rpitx** together. This combine receiver and transmission for experimenting.
 To launch it, go to rpitx folder and launch rtlmenu.sh :
 ```sh
 ./rtlmenu.sh
@@ -129,8 +133,8 @@ We assume that input frequency is tuned on FM station. It is demodulated and mod
 
 
 # To continue
-**rpitx** is a generic RF transmitter. There is a lot of modulation to do with it and also documentation to make all that easy to contribute. This will be the next step ! Feel free to inspect scripts, change parameters (frequencies, audio input, pictures...). 
+**rpitx** is a generic RF transmitter. There is a lot of modulation to do with it and also documentation to make all that easy to contribute. This will be the next step ! Feel free to inspect scripts, change parameters (frequencies, audio input, pictures...).
 
 # Credits
 All rights of the original authors reserved.
-I try to include all licences and authors in sourcecode. Need to write all references in this section.  
+I try to include all licences and authors in sourcecode. Need to write all references in this section.
